@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">HELLO</h1>
+    <ul>
+        <li class="list">list 1</li>
+        <li class="list">list 2</li>
+        <li class="list">list 3</li>
+        <li class="list">list 4</li>
+    </ul>
+    <p id="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis obcaecati inventore modi laudantium recusandae nobis corporis amet tempore totam debitis explicabo aspernatur sit impedit blanditiis sed, quam veniam voluptates assumenda?
+    </p>
+    <script>
+
+        let title = document.getElementById("title");
+        title.style.color = "#e04";
+        title.style.backgroundColor = "#0af";
+        // console.log(title);
+        // let content = document.getElementById("content");
+        // console.log(content);
+        // let list = document.getElementsByClassName("list");
+        // console.log(list);
+        // let li = document.getElementsByTagName("li");
+        // console.log(li);
+        // for(let i = 0 ;i<li.length;i++){
+        //     console.log(li[i]);
+        // }
+        // for(let i in li){
+        //     console.log(li[i]);
+        // }
+            let list = document.querySelectorAll(".list");
+            console.log(list);
+            list.forEach(function(data){
+                data.style.color = "red";
+                data.style.backgroundColor = "blue";
+            })
+    </script>
+</body>
+</html>

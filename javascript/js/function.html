@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         test(5,10);
+        function test(x,y){
+            console.log(x+y);
+        }
+        hello("tes","asdf");
+        let hello = function(i,j){
+            console.log(i+j); 
+        }
+        //提升性 hoisting
+       
+       
+        let x = 100;
+        if(x==100){
+            let y = "success";
+        }
+        // console.log(y);
+
+
+        function xyz(){
+            var qq = 100;
+        }
+        xyz();
+        console.log(qq);
+    </script>
+</body>
+</html>

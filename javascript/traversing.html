@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            // $(".content").children().css("color","red");
+            // $(".content").find(".list").css("color","red");
+            // $(".content").siblings("h1").css("color","red");
+            // $(".content").eq(0).css("color","red");
+            // $(".list").eq(2).css("color","red");
+            // $(".subtitle").eq(1).css("color","red");
+            // $(".list").parent().css("color","red");
+            // $(".list").parents(".subtitle").css("color","red");
+            $('.list').parent().siblings(".subtitle").css("color","red")
+        })
+        /*
+        Traversing
+        children() 尋找子代 可指定也可不指定
+        find() 尋找後代 需指定
+        siblings() 尋找同輩 可指定也可不指定
+        eq() 尋找與自己相同的同輩 需指定索引
+        parent() 尋找父元素 只會有一個 不須指定
+        parents() 尋找長輩元素 需在同一個分支 可指定也可不指定
+        */
+
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>title</h1>
+        <div class="content">
+            <h2 class="subtitle">sub title</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora ratione quo fuga repudiandae rem expedita repellat, laborum saepe reiciendis hic excepturi aspernatur possimus, veritatis distinctio aperiam quasi impedit optio odio.
+            </p>
+            <ul class="item">
+                <li class="list">test</li>
+                <li class="list">test</li>
+                <li class="list">test</li>
+                <li class="list">test</li>
+                <li class="list">test</li>
+                <li class="list">test</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

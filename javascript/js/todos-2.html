@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="item">
+    <button id="btn" onclick="todo()">ADD</button>
+    <ul id="todos">
+        <li class="list">aaa</li>
+        <li class="list">asdf</li>
+    </ul>
+    <script>
+
+        function todo() {
+            let item = document.getElementById("item").value;
+            let li = document.createElement("li");
+            let itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            li.setAttribute("class", "list");
+
+
+            let todos = document.getElementById("todos");
+            todos.appendChild(li);
+
+
+            document.getElementById("item").value = "";
+        }
+        document.addEventListener("click", function (e) {
+            if (e.target.className == "list") {
+                e.target.remove();
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

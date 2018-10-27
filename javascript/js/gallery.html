@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        .gallery {
+            width: 600px;
+        }
+        .thumbs img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="images/001.jpg" alt="" id="g">
+    </div>
+    <div class="thumbs">
+        <img src="images/001.jpg" alt="" class="thumb" data-img="001">
+        <img src="images/002.jpg" alt="" class="thumb" data-img="002">
+        <img src="images/003.jpg" alt="" class="thumb" data-img="003">
+        <img src="images/004.jpg" alt="" class="thumb" data-img="004">
+    </div>
+    <script>
+        let thumb = document.querySelectorAll(".thumb");
+        thumb.forEach(function(t){
+            t.addEventListener("click",function(){
+                let newImg = this.getAttribute("src");
+                let g = document.getElementById("g");
+                g.setAttribute("src",newImg);
+
+                // let newImg = this.dataset.img;
+                // let g = document.getElementById("g");
+                // g.setAttribute("src","images/"+newImg+".jpg");
+            })
+        })
+    </script>
+</body>
+</html>

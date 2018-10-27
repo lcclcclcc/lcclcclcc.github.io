@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" id="password"><button onclick = "pwSwitch()">顯示</button>
+    <script>
+        function pwSwitch(){
+            let pw = document.getElementById("password");
+            let pwType = pw.getAttribute("type");
+            
+            switch(pwType){
+                case "password":
+                    pw.setAttribute("type","text");
+                    break;
+                case "text":
+                    pw.setAttribute("type","password");
+                    break;
+            }
+
+        }
+    </script>
+</body>
+</html>

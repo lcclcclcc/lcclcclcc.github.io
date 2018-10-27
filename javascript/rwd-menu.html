@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .hamburger {
+            width: 60px;
+            height: 60px;
+            background-color: #f00;
+            position: relative;
+            float: right;
+        }
+        .hamburger span {
+            display: block;
+            width: 40px;
+            height: 6px;
+            background-color: #cdfd47;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        .hamburger span::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 6px;
+            background-color: #cdfd47;
+            position: absolute;
+            bottom: 12px;
+        }
+        .hamburger span::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 6px;
+            background-color: #cdfd47;
+            position: absolute;
+            top: 12px;
+        }
+        @media screen and (min-width:1024px) {
+            nav {
+                width: 100%;
+                height: 60px;
+                background-color: #333;
+            }
+
+            .container {
+                width: 1024px;
+                margin: auto;
+            }
+
+            .logo {
+                float: left;
+            }
+
+            .menu {
+                float: right;
+            }
+
+            .menu li {
+                float: left;
+                list-style: none;
+            }
+
+            .menu ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                line-height: 60px;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                transition: all .2s;
+            }
+
+            nav a:hover {
+                background-color: #eee;
+                color: #333;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            nav {
+                width: 100%;
+                /* height: 60px; */
+                background-color: #333;
+            }
+
+            .container {
+                /* width: 1024px; */
+                width: 100%;
+                margin: auto;
+            }
+
+            .logo {
+                /* float: left; */
+            }
+
+            .menu {
+                /* float: right; */
+                display: none;
+            }
+
+            .menu li {
+                /* float: left; */
+                list-style: none;
+            }
+
+            .menu ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                line-height: 60px;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                transition: all .2s;
+            }
+
+            /* nav a:hover {
+                background-color: #eee;
+                color: #333;
+            } */
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="hamburger"><span></span></div>
+            <div class="logo">
+                <a href="#">LOGO</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                    <li><a href="#">LINK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script>
+        $(function(){
+            $(".hamburger").click(function(){
+                $(".menu").slideToggle();
+            })
+            $(window).resize(function(){
+                let w = $(window).width();
+                console.log(w);
+                if(w>1024){
+                    $(".menu").show();
+                }else{
+                    $(".menu").hide();
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

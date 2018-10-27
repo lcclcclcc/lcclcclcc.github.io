@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    身高
+    <input type="text" id="height">
+    體重
+    <input type="text" id="weight">
+    <button id="cal">計算</button>
+    <div id="output"></div>
+    <script>
+        function bmi(){
+            let h = document.getElementById("height").value/100;
+            let w = document.getElementById("weight").value;
+            console.log(h);
+            console.log(w);
+            // let b = Math.round(w / Math.pow(h,2));
+            let b = Math.floor( (w / Math.pow(h,2)) * 10) / 10;
+            // let b = Math.ceil(w / Math.pow(h,2));
+            
+            console.log(b);
+            let output  = document.getElementById("output");
+            output.textContent = b;
+        }
+        let btn = document.getElementById("cal");
+        btn.addEventListener("click",bmi);
+    </script>
+</body>
+</html>

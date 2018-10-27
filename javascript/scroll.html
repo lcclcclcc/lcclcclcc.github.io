@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft Jhenghei";
+        }
+        nav {
+            background-color: #333;
+            line-height: 60px;
+            height: 60px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #about {
+            height: 1200px;
+            background-color: #f7ca02;
+        }
+        #service {
+            height: 1200px;
+            background-color: #02f791;
+        }
+        #product {
+            height: 1200px;
+            background-color: #f70254;
+        }
+        #contact {
+            height: 1200px;
+            background-color: #02c6f7;
+        }
+    </style>
+    <script>
+    $(function(){
+        let a = $("#about").offset().top;
+        let s = $("#service").offset().top;
+        let p = $("#product").offset().top;
+        let c = $("#contact").offset().top;
+        console.log(a);
+        console.log(s);
+        console.log(p);
+        console.log(c);
+
+        $("nav").children().eq(0).click(function(){
+            $("body,html").animate({
+                scrollTop: a
+            });
+        })     
+        $("nav").children().eq(1).click(function(){
+            $("body,html").animate({
+                scrollTop: s
+            });
+        })     
+        $("nav").children().eq(2).click(function(){
+            $("body,html").animate({
+                scrollTop: p
+            });
+        })     
+        $("nav").children().eq(3).click(function(){
+            $("body,html").animate({
+                scrollTop: c
+            });
+        })     
+    })
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Product</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div id="about"></div>
+    <div id="service"></div>
+    <div id="product"></div>
+    <div id="contact"></div>
+</body>
+</html>

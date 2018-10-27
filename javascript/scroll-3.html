@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft Jhenghei";
+        }
+        nav {
+            background-color: #333;
+            line-height: 60px;
+            height: 60px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #about {
+            height: 1200px;
+            background-color: #f7ca02;
+        }
+        #service {
+            height: 1200px;
+            background-color: #02f791;
+        }
+        #product {
+            height: 1200px;
+            background-color: #f70254;
+        }
+        #contact {
+            height: 1200px;
+            background-color: #02c6f7;
+        }
+
+        #gotop {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: #eee;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+
+            position: fixed;
+            right: -100px;
+            bottom: 10px;
+            
+            transition: all .6s;
+        }
+        /* .in {
+            right: 10px!important;
+        } */
+        #gotop.in {
+            right: 10px;
+        }
+        #gotop.out {
+            right: -100px;
+        }
+    </style>
+    <script>
+    $(function(){
+        $("nav").find("a").click(function(){
+            $("#container")
+            let _target = $(this).data("target");
+            // let _target = $(this).attr("href");
+            let h = $(_target).offset().top;
+            console.log(h);
+            $("html,body").animate({
+                scrollTop: h
+            })
+        })
+
+        $("#gotop").click(function(){
+            $("html,body").animate({
+                scrollTop: 0
+            });
+        });
+
+        // $("#gotop").hide();
+        $(window).scroll(function(){
+            let h = $(window).scrollTop();
+            console.log(h);
+            if(h>600){
+                // $("#gotop").fadeIn();
+                $("#gotop").removeClass("out").addClass("in");
+            }else{
+                // $("#gotop").fadeOut();
+                $("#gotop").removeClass("in").addClass("out");
+
+            }
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#" data-target="#about">About</a>
+        <a href="#" data-target="#service">Service</a>
+        <a href="#" data-target="#product">Product</a>
+        <a href="#" data-target="#contact">Contact</a>
+    </nav>
+    <div id="about"></div>
+    <div id="service"></div>
+    <div id="product"></div>
+    <div id="contact"></div>
+    <a href="#" id="gotop">TOP</a>
+</body>
+</html>
